@@ -7,7 +7,7 @@ using namespace std;
 struct Restaurant {
     string name;
     string address;
-    string cuisione;
+    string cuisine;
     int rating;
     bool reservation;
 };
@@ -66,7 +66,30 @@ Restaurant createRestaurant() {
         cout << "rating must be 1-5";
         cin >> temp.rating;
     }
+    cout << "reservation available? (Y or N): ";
+    char entry;
+    cin >> entry;
+    entry = toupper(entry);
 
+    while (entry != 'Y' && entry != 'N') {
+        cout << "Y/N only";
+        cin >> entry;
+        entry = toupper(entry);
+    }
+
+    temp.reservation = (entry == 'Y');
+    return temp;
 }
+
+void outputRestaurant(const Restaurant& r) {
+    cout << "---------------------------------\n";
+    cout << "Name     : " << r.name << "\n";
+    cout << "Address  : " << r.address << "\n";
+    cout << "Cuisine  : " << r.cuisine << "\n";
+    cout << "Rating   : " << r.rating << "\n";
+    cout << "reservation : " << (r.reservation ? "Yes" : "No") << "\n";
+    cout << "---------------------------------\n";
+}
+
 
 
