@@ -1,3 +1,4 @@
+// COMSC-210 | Lab3a | Seoyeon An
 #include <iostream>
 #include <string>
 
@@ -12,9 +13,11 @@ struct Restaurant {
 };
 
 //function prototypes
+Restaurant createRestaurant();
+void outputRestaurant(const Restaurant& r);
 
 int main() {
     cout << "restaurant struct\n" ;
-    
+
 
 }
